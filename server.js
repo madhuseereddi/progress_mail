@@ -14,7 +14,7 @@ let questionIndex = 0;
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'seereddym@gmail.com',
+    user: 'seereddmm@gmail.com',
     pass: 'wdjn psjv ssba woxz', // Replace with your App Password
   },
   tls: {
@@ -33,59 +33,100 @@ function sendEmail() {
 
   const mailOptions = {
     from: 'seereddym@gmail.com',
-    to: 'seereddim@gmail.com',
+    to: 'sasisasi8572@gmail.com,seereddim@gmail.com',
     subject: 'Daily Coding Questions - Your Daily Challenge',
     html: `
       <html>
         <head>
           <style>
             body {
-              font-family: Arial, sans-serif;
+              font-family: 'Arial', sans-serif;
               background-color: #f4f7fc;
-              color: #333;
               margin: 0;
-              padding: 20px;
+              padding: 0;
+              color: #333;
             }
             .container {
               max-width: 700px;
-              margin: 20px auto;
+              margin: 40px auto;
               background: #ffffff;
-              border-radius: 8px;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              border-radius: 10px;
+              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
               overflow: hidden;
             }
             .header {
               background: linear-gradient(90deg, #6a1b9a, #3a4db3);
-              color: #fff;
-              padding: 20px;
+              color: white;
               text-align: center;
-              font-size: 24px;
+              padding: 30px;
+              font-size: 32px;
               font-weight: bold;
             }
             .content {
-              padding: 20px;
+              padding: 30px;
+              line-height: 1.6;
+              color: #4a4a4a;
+            }
+            .content h2 {
+              font-size: 24px;
+              color: #1e3d58;
+              margin-bottom: 15px;
+            }
+            .day-count {
+              color: #1d76c2;
+              font-size: 20px;
+              font-weight: bold;
+              margin-bottom: 25px;
             }
             .question {
-              margin: 15px 0;
-              padding: 15px;
-              background-color: #f9f9f9;
-              border-left: 5px solid #6a1b9a;
-              border-radius: 5px;
+              background: #f8f9fa;
+              margin: 20px 0;
+              padding: 20px;
+              border-radius: 8px;
+              border: 1px solid #ddd;
+              font-size: 18px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              transition: background 0.3s ease;
+            }
+            .question:hover {
+              background: #e3e8f0;
             }
             .btn {
               display: inline-block;
-              padding: 10px 20px;
-              color: #fff;
-              background-color: #6a1b9a;
               text-decoration: none;
+              color: #ffffff;
+              background-color: rgb(183, 200, 252);
+              padding: 10px 20px;
               border-radius: 5px;
               font-size: 16px;
+              font-weight: bold;
+              margin-top: 20px;
+              transition: background-color 0.3s ease;
+            }
+            .btn:hover {
+              background-color: #45a049;
             }
             .footer {
+              background: #f1f1f1;
               text-align: center;
-              padding: 15px;
+              padding: 20px;
               font-size: 14px;
-              background-color: #f1f1f1;
+              color: #555;
+              border-top: 1px solid #e0e0e0;
+            }
+            .instructions {
+              font-size: 16px;
+              color: #333;
+              margin-top: 20px;
+            }
+            .btn-wrapper {
+              margin-top: 25px;
+              text-align: center;
+            }
+            .instructions ul {
+              list-style-type: square;
+              padding-left: 20px;
+              color: #333;
             }
           </style>
         </head>
@@ -93,16 +134,32 @@ function sendEmail() {
           <div class="container">
             <div class="header">Your Daily Coding Challenge</div>
             <div class="content">
-              <h2>Here are your coding questions for today:</h2>
+              <h2>Hello, here are your coding questions for today:</h2>
+              <div class="day-count">
+                Day: ${Math.floor(questionIndex / 2) + 1}
+              </div>
               ${questionsToSend.map((question, index) => `
                 <div class="question">
-                  <strong>Q${index + 1}:</strong> ${question}
+                  <strong>Q${index + 1}: </strong>${question}
                 </div>
               `).join('')}
-              <a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank">Start Coding</a>
+              <div class="btn-wrapper">
+                <a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank">Start Coding Now</a>
+              </div>
+              <div class="instructions">
+                <p><strong>Additional Instructions:</strong></p>
+                <ul>
+                  <li>Login with the credentials: <br/><strong>Email:</strong> <em>seereddim@gmail.com</em><br/><strong>Password:</strong> <em>Saimadhu@123</em>.</li>
+                  <li>Go to "My Projects".</li>
+                  <li>Click the folder allocated to you.</li>
+                  <li>Click on "New Project".</li>
+                  <li>Start working on your project, and click "Save" to store your progress.</li>
+                </ul>
+                <p>Best of luck, and happy coding!</p>
+              </div>
             </div>
             <div class="footer">
-              <p>Sent with ❤️ by Your Coding Assistant</p>
+              <p>Sent with ❤️ from Your Coding Assistant</p>
             </div>
           </div>
         </body>
