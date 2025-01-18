@@ -5,7 +5,7 @@ const problems = require('./problems'); // Importing the problems array
 
 // Express app setup
 const app = express();
-const PORT = 3011;
+const PORT = 3030;
 
 // Keep track of the current question index
 let questionIndex = 0;
@@ -122,7 +122,7 @@ function sendEmail() {
 
 // Schedule email using node-cron
 cron.schedule(
-  '00 07 * * *', // Adjust this to the desired time
+  '25 07 * * *', // Adjust this to the desired time
   () => {
     console.log('Cron job triggered at:', new Date());
     sendEmail();
