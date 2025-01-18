@@ -33,7 +33,7 @@ function sendEmail() {
 
   const mailOptions = {
     from: 'seereddym@gmail.com',
-    to: 'sasisasi8572@gmail.com,seereddim@gmail.com',
+    to: 'seereddim@gmail.com',
     subject: 'Daily Coding Questions - Your Daily Challenge',
     html: `
       <html>
