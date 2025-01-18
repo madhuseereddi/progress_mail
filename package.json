@@ -1,4 +1,8 @@
 {
+  "scripts": {
+  "start": "node your-start-file.js"
+},
+
   "dependencies": {
     "express": "^4.21.2",
     "node-cron": "^3.0.3",
