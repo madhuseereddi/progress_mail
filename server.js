@@ -179,7 +179,7 @@ function sendEmail() {
 
 // Schedule email using node-cron
 cron.schedule(
-  '00 08 * * *', // Adjust this to the desired time
+  '05 08 * * *', // Adjust this to the desired time
   () => {
     console.log('Cron job triggered at:', new Date());
     sendEmail();
